@@ -4,14 +4,19 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm-run-all --parallel client:dev server:dev",
+    "client:dev": "npm --prefix ./client/ run dev",
+    "server:dev": "npm --prefix ./server/ run dev",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "all": "^0.0.0",
+    "npm": "^11.5.2",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "run": "^1.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
