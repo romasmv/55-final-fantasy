@@ -15,27 +15,33 @@ export function AdminViewCategoryPage() {
 
             <div className="container">
                 <div className="row">
-                    <div class="col-12 col-md-9 mt-5">
+                    <div className="col-12 col-md-9 mt-5">
                         <Alert text='Norima kategorija nerasta, todel jos perziureti yra neimanomas.' />
                     </div>
-                    <div class="col-12 col-md-9 mt-5">
-                        <table class="table table-bordered border-primary">
+                    <div className="col-12 col-md-9 mt-5">
+                        <table className="table table-bordered border-primary">
                             <tbody>
-                                <tr class="mb-3">
+                                <tr className="mb-3">
                                     <td>Title</td>
                                     <td>{category.title}</td>
                                 </tr>
-                                <tr class="mb-3">
+                                <tr className="mb-3">
                                     <td>Url slug</td>
                                     <td>{category.url}</td>
                                 </tr>
-                                <tr class="mb-3">
+                                <tr className="mb-3">
                                     <td>Description</td>
                                     <td>{category.description}</td>
                                 </tr>
-                                <tr class="mb-3">
+                                <tr className="mb-3">
                                     <td>Status</td>
-                                    <td>{category.status}</td>
+                                    <td>
+                                        {
+                                            category.status === 'published'
+                                                ? <span className="badge text-bg-success">Published</span>
+                                                : <span className="badge text-bg-warning">Draft</span>
+                                        }
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
